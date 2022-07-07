@@ -10,7 +10,7 @@ typedef void *Queue;
 typedef void *Data;
 
 /*
- * Output: Queue -> Struct.
+ * Output: Queue.
  */
 Queue newQueue();
 
