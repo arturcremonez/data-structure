@@ -66,7 +66,7 @@ PARAMETERS *newParameters()
     }
     else
     {
-        printf("ERROR: Could not allocate memory for empty params.\n");
+        printf("ERROR: Could not allocate memory for parameters.\n");
         exit(EXIT_FAILURE);
     }
     return arguments;

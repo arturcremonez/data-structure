@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "parameter_manager.h"
+#include "file_manager.h"
 
 int main(int argc, char *argv[])
 {
@@ -11,10 +12,12 @@ int main(int argc, char *argv[])
     char *geoName = getGeoName(parameters);
     char *qryName = getQryName(parameters);
     char *degradationFactor = getDegradationFactor(parameters);
-    printf("Input directory: %s\n", inputDirectory);
-    printf("Output directory: %s\n", outputDirectory);
-    printf("Geo name: %s\n", geoName);
-    printf("Qry name: %s\n", qryName);
-    printf("Degradation factor: %s\n", degradationFactor);
+
+    char *geoInput = getFileInput(inputDirectory, geoName);
+    char *qryInput = getFileInput(inputDirectory, qryName);
+    char *geoSvgOutput = getFileSvgOutput(outputDirectory, geoName);
+    char *qryTxtOutput = getMixedFilesTxtOutput(outputDirectory, geoName, qryName);
+    char *qrySvgOutput = getMixedFilesSvgOutput(outputDirectory, geoName, qryName);
+
     return 0;
 }
