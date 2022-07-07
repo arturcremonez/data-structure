@@ -1,4 +1,4 @@
-OBJECTS = src/main.o src/parameter_manager.o src/file_manager.o src/list.o
+OBJECTS = src/main.o src/parameter_manager.o src/file_manager.o src/list.o src/queue.o
 
 ted: $(OBJECTS)
 	gcc $(OBJECTS) -std=c99 -fstack-protector-all -g -lm -o ted
